@@ -1,2 +1,7 @@
+# || * is used as a wildcard match
+# || / is used to ignore pathnames relative to the .gitignore files
+# || # is used to add comments to a .gitignore files
+
+
 # stuff to ignore
 task-to-do.txt
