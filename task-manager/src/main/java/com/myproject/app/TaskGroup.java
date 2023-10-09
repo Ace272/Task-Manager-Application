@@ -1,7 +1,7 @@
 package com.myproject.app;
 
 import java.util.*;
-import java.io.*;
+// import java.io.*;
 
 public class TaskGroup{
     private String name;
@@ -27,8 +27,16 @@ public class TaskGroup{
             }
         return taskList;
     }
-    //Task List manipulation
 
+    //setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /* ******************Task List Manipulation *********************************/ 
     //View the task list
     public void viewTaskList(){
         for(TaskItem task:taskList){

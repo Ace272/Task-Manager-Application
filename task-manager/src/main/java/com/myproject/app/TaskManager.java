@@ -37,16 +37,33 @@ public class TaskManager{
         return taskItemobj;
     }
 
-    /* 
-    //Adding tasks to task list in taskgroup
-    public void addnewToTGList(TaskGroup tg, TaskItem taskId, String taskName, String taskDesc, TaskItem.Status stat){
-        createTaskItem(taskId, taskName, taskDesc, stat);
+    // add new item to task group list
+    public void addNewToTGList(TaskGroup tg, TaskItem taskItemobj, String name, String desc, TaskItem.Status stat ){
+        taskItemobj = new TaskItem(name, desc, stat);
+        tg.addToTL(taskItemobj);
+        tg.viewTaskList();
     }
 
-    public void addNewToTGList(TaskGroup tg, String taskName, String taskDesc, TaskItem.Status stat) {
-        TaskItem newTask = createTaskItem(taskName, taskDesc, stat);
-        
+    //add existing taskItem to task group list
+    public void addToTGList(TaskGroup tg, TaskItem ti){
+        tg.addToTL(ti);
+        tg.viewTaskList();
     }
-*/
     //File time
+
+    //creating Task Group File
+    public void createTaskGroupFile(File file, TaskGroup tg, String name, String desc){
+        createTaskGroup(tg, name, desc);
+        String fileName = tg.getName() + ".xml";
+        try{
+            file = new File(fileName);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
 }
