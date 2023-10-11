@@ -1,9 +1,12 @@
 package com.myproject.app;
 
-// import javax.xml.bind.annotation.XmlAttribute; 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;  
+import javax.xml.bind.annotation.XmlRootElement;  
 import java.util.*;
 // import java.io.*;
 
+@XmlRootElement
 public class TaskGroup{
     private String name;
     private String description;
