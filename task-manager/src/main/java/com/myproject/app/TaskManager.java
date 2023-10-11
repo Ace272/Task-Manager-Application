@@ -26,10 +26,10 @@ public class TaskManager{
     }
 
     //method to create a task group
-    public TaskGroup createTaskGroup(TaskGroup taskGroupObj, String name, String desc){
-        taskGroupObj = new TaskGroup(name, desc);
-        return taskGroupObj;
-    }
+    // public TaskGroup createTaskGroup(TaskGroup taskGroupObj, String name, String desc){
+    //     taskGroupObj = new TaskGroup(name, desc);
+    //     return taskGroupObj;
+    // }
 
     //method to create a task Item
     public TaskItem createTaskItem(TaskItem taskItemobj, String name, String desc, TaskItem.Status stat){
@@ -52,18 +52,18 @@ public class TaskManager{
     //File time
 
     //creating Task Group File
-    public void createTaskGroupFile(File file, TaskGroup tg, String name, String desc){
-        createTaskGroup(tg, name, desc);
-        String fileName = tg.getName() + ".xml";
-        try{
-            file = new File(fileName);
-            if(!file.exists()){
-                file.createNewFile();
-            }
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-    }
+    // public void createTaskGroupFile(File file, TaskGroup tg, String name, String desc){
+    //     createTaskGroup(tg, name, desc);
+    //     String fileName = tg.getName() + ".xml";
+    //     try{
+    //         file = new File(fileName);
+    //         if(!file.exists()){
+    //             file.createNewFile();
+    //         }
+    //     }
+    //     catch(IOException e){
+    //         e.printStackTrace();
+    //     }
+    // }
 
 }

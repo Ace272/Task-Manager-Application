@@ -1,5 +1,6 @@
 package com.myproject.app;
 
+// import javax.xml.bind.annotation.XmlAttribute; 
 import java.util.*;
 // import java.io.*;
 
@@ -8,9 +9,7 @@ public class TaskGroup{
     private String description;
     private List<TaskItem> taskList;
 
-    TaskGroup(String name, String description){
-        this.name = name;
-        this.description = description;
+    TaskGroup(){
         taskList= new ArrayList<> ();
     }
 
