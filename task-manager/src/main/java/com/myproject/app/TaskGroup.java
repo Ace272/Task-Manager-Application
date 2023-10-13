@@ -1,12 +1,14 @@
 package com.myproject.app;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;  
-import javax.xml.bind.annotation.XmlRootElement;  
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAttribute; 
 import java.util.*;
 // import java.io.*;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TaskGroup{
     private String name;
     private String description;
@@ -17,12 +19,19 @@ public class TaskGroup{
     }
 
     //getter methods
+    @XmlAttribute
     public String getName() {
         return name;
     }
+    @XmlAttribute
     public String getDescription() {
         return description;
     }
+    @XmlAttribute(name = "taskItem")
+    public List<TaskItem> getTaskList() {
+        return taskList;
+    }
+
     public List<TaskItem> getTasks() {
         if (taskList.isEmpty()){
             System.out.println("Task list is empty");
