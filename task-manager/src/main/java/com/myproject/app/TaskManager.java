@@ -91,7 +91,7 @@ public class TaskManager{
 
     // }
 
-
+    //Marshalling
     public void objectToXml(TaskGroup tg, String name, String desc) {
     try {
         // Create a JAXB context for the TaskGroup class
@@ -136,4 +136,25 @@ public class TaskManager{
     //     }
     // }
 
+    //Unmarshalling
+    public TaskGroup xmlToObject(String xmlFileName) {
+        try {
+            // Create a JAXB context for the TaskGroup class
+            JAXBContext contextObj = JAXBContext.newInstance(TaskGroup.class);
+
+            // Create an unmarshaller
+            Unmarshaller unmarshaller = contextObj.createUnmarshaller();
+
+            // Unmarshal the XML file and cast it to a TaskGroup object
+            return (TaskGroup) unmarshaller.unmarshal(new File(xmlFileName));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            System.out.println("JAXB Unmarshalling Error");
+            return null; 
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Some general problem occurred");
+            return null;
+        }
+    }
 }
