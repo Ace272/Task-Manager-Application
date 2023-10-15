@@ -2,6 +2,10 @@ package com.myproject.app;
 
 import java.util.*;
 import java.io.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.Marshaller;
 
 public class TaskManager{
     public static List<TaskItem> allTaskItems = new ArrayList<>();
@@ -24,12 +28,6 @@ public class TaskManager{
             System.out.println(task);
         }
     }
-
-    //method to create a task group
-    // public TaskGroup createTaskGroup(TaskGroup taskGroupObj, String name, String desc){
-    //     taskGroupObj = new TaskGroup(name, desc);
-    //     return taskGroupObj;
-    // }
 
     //method to create a task Item
     public TaskItem createTaskItem(TaskItem taskItemobj, String name, String desc, TaskItem.Status stat){
@@ -62,6 +60,78 @@ public class TaskManager{
     //         }
     //     }
     //     catch(IOException e){
+    //         e.printStackTrace();
+    //     }
+    // }
+
+    //creating Task Group File
+    // public void objectToXml(TaskGroup tg, String name, String desc){
+    //     try {
+    //         JAXBContext contextObj = JAXBContext.newInstance(TaskGroup.class);
+
+    //         Marshaller marshallerObj = contextObj.createMarshaller();  
+    //         marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+    //         tg = new TaskGroup();
+    //         tg.setName(name);
+    //         tg.setDescription(desc);
+    //         String fileName = tg.getName() + ".xml";
+
+    //         marshallerObj.marshal(tg, new FileOutputStream(fileName)); 
+    //     } catch (JAXBException e) {
+    //         e.printStackTrace();
+    //         System.out.println("File wasn't found");
+    //     }
+    //     catch(FileNotFoundException e) {
+    //         e.printStackTrace();
+    //     }
+    //     finally (Exception e){
+    //         e.printStackTrace();
+    //     }
+
+    // }
+
+
+    public void objectToXml(TaskGroup tg, String name, String desc) {
+    try {
+        // Create a JAXB context for the TaskGroup class
+        JAXBContext contextObj = JAXBContext.newInstance(TaskGroup.class);
+
+        // Create a marshaller
+        Marshaller marshallerObj = contextObj.createMarshaller();
+        marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+        // Set the name and description for the TaskGroup
+        tg.setName(name);
+        tg.setDescription(desc);
+
+        // Create the output XML file
+        String fileName = tg.getName() + ".xml";
+
+        // Marshal the TaskGroup to the XML file
+        marshallerObj.marshal(tg, new File(fileName));
+    } catch (JAXBException e) {
+        e.printStackTrace();
+        System.out.println("JAXB Error");
+    } catch (Exception e) {
+        e.printStackTrace();
+        System.out.println("General Error");
+    }
+}
+
+    
+    
+    // public void xmlToTgObject(File file, TaskGroup tg, String name, String desc){
+    //     tg = new TaskGroup();
+    //     tg.setName(name);
+    //     tg.setDescription(desc);
+    //     String fileName = tg.getName() + ".xml";
+    //     try {
+    //         file = new File(fileName);
+    //         JAXBContext jaxbContext = JAXBContext.newInstance(TaskGroup.class);
+
+    //         Unmarshaller jaxUnmarshaller = jaxbContext.createUnmarshaller();
+    //     } catch (JAXBException e) {
     //         e.printStackTrace();
     //     }
     // }
