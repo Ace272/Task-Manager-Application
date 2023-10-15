@@ -49,48 +49,6 @@ public class TaskManager{
     }
     //File time
 
-    //creating Task Group File
-    // public void createTaskGroupFile(File file, TaskGroup tg, String name, String desc){
-    //     createTaskGroup(tg, name, desc);
-    //     String fileName = tg.getName() + ".xml";
-    //     try{
-    //         file = new File(fileName);
-    //         if(!file.exists()){
-    //             file.createNewFile();
-    //         }
-    //     }
-    //     catch(IOException e){
-    //         e.printStackTrace();
-    //     }
-    // }
-
-    //creating Task Group File
-    // public void objectToXml(TaskGroup tg, String name, String desc){
-    //     try {
-    //         JAXBContext contextObj = JAXBContext.newInstance(TaskGroup.class);
-
-    //         Marshaller marshallerObj = contextObj.createMarshaller();  
-    //         marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-    //         tg = new TaskGroup();
-    //         tg.setName(name);
-    //         tg.setDescription(desc);
-    //         String fileName = tg.getName() + ".xml";
-
-    //         marshallerObj.marshal(tg, new FileOutputStream(fileName)); 
-    //     } catch (JAXBException e) {
-    //         e.printStackTrace();
-    //         System.out.println("File wasn't found");
-    //     }
-    //     catch(FileNotFoundException e) {
-    //         e.printStackTrace();
-    //     }
-    //     finally (Exception e){
-    //         e.printStackTrace();
-    //     }
-
-    // }
-
     //Marshalling
     public void objectToXml(TaskGroup tg, String name, String desc) {
     try {
@@ -119,23 +77,6 @@ public class TaskManager{
     }
 }
 
-    
-    
-    // public void xmlToTgObject(File file, TaskGroup tg, String name, String desc){
-    //     tg = new TaskGroup();
-    //     tg.setName(name);
-    //     tg.setDescription(desc);
-    //     String fileName = tg.getName() + ".xml";
-    //     try {
-    //         file = new File(fileName);
-    //         JAXBContext jaxbContext = JAXBContext.newInstance(TaskGroup.class);
-
-    //         Unmarshaller jaxUnmarshaller = jaxbContext.createUnmarshaller();
-    //     } catch (JAXBException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
-
     //Unmarshalling
     public TaskGroup xmlToObject(String xmlFileName) {
         try {
@@ -157,4 +98,5 @@ public class TaskManager{
             return null;
         }
     }
+
 }
