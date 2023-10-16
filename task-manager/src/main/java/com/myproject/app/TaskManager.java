@@ -68,6 +68,12 @@ public class TaskManager{
         String taskGroupDirectoryPath = "src/main/resources/Task-Group/";
         String fileName = taskGroupDirectoryPath + tg.getName() + ".xml";
 
+        // Ensure the directory exists, creating it if necessary
+        File directory = new File(taskGroupDirectoryPath);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
         // Marshal the TaskGroup to the XML file
         marshallerObj.marshal(tg, new File(fileName));
     } catch (JAXBException e) {
