@@ -63,8 +63,10 @@ public class TaskManager{
         tg.setName(name);
         tg.setDescription(desc);
 
+
         // Create the output XML file
-        String fileName = tg.getName() + ".xml";
+        String taskGroupDirectoryPath = "src/main/resources/Task-Group/";
+        String fileName = taskGroupDirectoryPath + tg.getName() + ".xml";
 
         // Marshal the TaskGroup to the XML file
         marshallerObj.marshal(tg, new File(fileName));
