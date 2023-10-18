@@ -1,5 +1,7 @@
 package com.myproject.app;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.io.*;
 import javax.xml.bind.JAXBContext;
@@ -9,6 +11,7 @@ import javax.xml.bind.Marshaller;
 
 public class TaskManager{
     public static List<TaskItem> allTaskItems = new ArrayList<>();
+    private static final Logger logger = LogManager.getLogger(TaskManager.class);
 
     TaskManager(){
         //placeholder
@@ -17,14 +20,17 @@ public class TaskManager{
     // method adding to allTaskItems
     public static void addToAll(TaskItem newItem){
         allTaskItems.add(newItem);
+        logger.info("Added task item to allTaskItems: " + newItem.getName());
     }
     //method to remove from allTaskItems
     public static void delToAll(TaskItem delItem){
         allTaskItems.remove(delItem);
+        logger.info("Removed task item from allTaskItems: " + delItem.getName());
     }
     //method to view allTaskItems
     public static void viewAllTasks(){
         for(TaskItem task: allTaskItems){
+            logger.info("Task: " + task.getName());
             System.out.println(task);
         }
     }
@@ -32,6 +38,7 @@ public class TaskManager{
     //method to create a task Item
     public TaskItem createTaskItem(TaskItem taskItemobj, String name, String desc, TaskItem.Status stat){
         taskItemobj = new TaskItem(name, desc, stat);
+        logger.info("Created a new task item: " + name);
         return taskItemobj;
     }
 
@@ -40,12 +47,14 @@ public class TaskManager{
         taskItemobj = new TaskItem(name, desc, stat);
         tg.addToTL(taskItemobj);
         tg.viewTaskList();
+        logger.info("Added task item to task group list: " + taskItemobj.getName());
     }
 
     //add existing taskItem to task group list
     public void addToTGList(TaskGroup tg, TaskItem ti){
         tg.addToTL(ti);
         tg.viewTaskList();
+        logger.info("Added an existing task item to task group list: " + ti.getName());
     }
     //File time
 
@@ -76,10 +85,13 @@ public class TaskManager{
 
         // Marshal the TaskGroup to the XML file
         marshallerObj.marshal(tg, new File(fileName));
+        logger.info("Marshalled TaskGroup to XML file: " + fileName);
     } catch (JAXBException e) {
+        logger.error("JAXB Error: " + e.getMessage());
         e.printStackTrace();
         System.out.println("JAXB Error");
     } catch (Exception e) {
+        logger.error("General Error: " + e.getMessage());
         e.printStackTrace();
         System.out.println("General Error");
     }
@@ -95,12 +107,15 @@ public class TaskManager{
             Unmarshaller unmarshaller = contextObj.createUnmarshaller();
 
             // Unmarshal the XML file and cast it to a TaskGroup object
+            logger.info("Unmarshalled XML file to TaskGroup object: " + xmlFileName);
             return (TaskGroup) unmarshaller.unmarshal(new File(xmlFileName));
         } catch (JAXBException e) {
+            logger.error("JAXB Unmarshalling Error: " + e.getMessage());
             e.printStackTrace();
             System.out.println("JAXB Unmarshalling Error");
             return null; 
         } catch (Exception e) {
+            logger.error("Some general problem occurred: " + e.getMessage());
             e.printStackTrace();
             System.out.println("Some general problem occurred");
             return null;
