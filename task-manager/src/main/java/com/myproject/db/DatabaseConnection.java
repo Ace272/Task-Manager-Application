@@ -13,6 +13,7 @@ public class DatabaseConnection {
         try {
             Class.forName(DB_DRIVER);
             connection = DriverManager.getConnection(DB_URL);
+            System.out.println("Connection created");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
