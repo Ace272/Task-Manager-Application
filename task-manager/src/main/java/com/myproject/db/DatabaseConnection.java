@@ -2,6 +2,8 @@ package com.myproject.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
@@ -40,5 +42,10 @@ public class DatabaseConnection {
                 e.printStackTrace();
             }
         }
+    }
+    public void createTL(String tlname){
+        String sql = "CREATE TABLE " + tlname + " ( taskList_id INT, taskItem_id INT," +
+                "FOREIGN KEY (taskItem_id) REFERENCES TaskItem(taskItem_id)," +
+                "FOREIGN KEY (taskList_id) REFERENCES TaskList(taskList_id)";
     }
 }
