@@ -11,3 +11,9 @@ os.arch=amd64
 os.version=6.2.0-35-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Oct 29 21:23:05 EDT 2023: Shutting down Derby engine
+----------------------------------------------------------------
+Sun Oct 29 21:23:05 EDT 2023:
+Shutting down instance a816c00e-018b-7e10-ece1-00000718dad8 on database directory /home/suigetsu/proj/personal/Task-Manager-Application/task-manager/src/main/java/com/myproject/db/myTasksdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1cf4f579 
+----------------------------------------------------------------
