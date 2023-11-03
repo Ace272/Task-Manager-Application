@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+Sun Oct 29 20:52:01 EDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-018b-7e10-ece1-00000718dad8 
+on database directory /home/suigetsu/proj/personal/Task-Manager-Application/task-manager/src/main/java/com/myproject/db/myTasksdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1cf4f579 
+Loaded from file:/home/suigetsu/Downloads/db-derby-10.16.1.1-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=20.0.2+9-78
+user.dir=/home/suigetsu/proj/personal/Task-Manager-Application/task-manager/src/main/java/com/myproject/db
+os.name=Linux
+os.arch=amd64
+os.version=6.2.0-35-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Oct 29 21:23:05 EDT 2023: Shutting down Derby engine
+----------------------------------------------------------------
+Sun Oct 29 21:23:05 EDT 2023:
+Shutting down instance a816c00e-018b-7e10-ece1-00000718dad8 on database directory /home/suigetsu/proj/personal/Task-Manager-Application/task-manager/src/main/java/com/myproject/db/myTasksdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1cf4f579 
+----------------------------------------------------------------
