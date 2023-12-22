@@ -1,0 +1,4 @@
+2023-12-22 14:59:25 INFO  TaskManager:23 - Added task item to allTaskItems: Sample Name
+2023-12-22 14:59:25 INFO  TaskManager:23 - Added task item to allTaskItems: Task 1
+2023-12-22 14:59:25 INFO  TaskManager:23 - Added task item to allTaskItems: Task 2
+2023-12-22 14:59:25 INFO  TaskManager:28 - Removed task item from allTaskItems: Task 1
