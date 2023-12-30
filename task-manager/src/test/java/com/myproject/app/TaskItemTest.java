@@ -1,7 +1,7 @@
 package com.myproject.app;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskItemTest {
 
@@ -37,14 +37,14 @@ public class TaskItemTest {
         // Create Field Values
         String taskName = "Tested Task";
         String taskDesc = "Description of tested task";
-        Status taskStat = TaskItem.Status.IN_PROGRESS;
+        TaskItem.Status taskStat = TaskItem.Status.IN_PROGRESS;
 
         // Create task item with the variables made
         TaskItem t1 = new TaskItem(taskName, taskDesc, taskStat);
 
         // Check if the values are input correctly
-        asserEquals(taskName,t1.getName());
-        asserEquals(taskDesc, t1.getDescription());
-        asserEquals(taskStat, t1.getStatus());
+        assertEquals(taskName,t1.getName());
+        assertEquals(taskDesc, t1.getDescription());
+        assertEquals(taskStat, t1.getStatus());
     }
 }
