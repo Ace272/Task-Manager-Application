@@ -2,6 +2,7 @@ package com.myproject.app;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.assertj.core.api.Assertions.*;
 
 public class TaskItemTest {
 

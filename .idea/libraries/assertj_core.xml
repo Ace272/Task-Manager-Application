@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="assertj.core" type="repository">
+    <properties maven-id="org.assertj:assertj-core:3.24.2">
+      <exclude>
+        <dependency maven-id="net.bytebuddy:byte-buddy" />
+        <dependency maven-id="org.assertj:assertj-core" />
+      </exclude>
+    </properties>
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
