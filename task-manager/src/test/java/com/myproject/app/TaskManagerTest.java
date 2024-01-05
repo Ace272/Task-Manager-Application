@@ -1,6 +1,7 @@
 package com.myproject.app;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 
@@ -30,8 +31,20 @@ public class TaskManagerTest {
         // Verify that the sample TaskItem was added to the allTaskItems list
         assertEquals(1, allTaskItems.size());
         assertEquals(taskItem, allTaskItems.get(0));
+    }
 
-        // You might want to assert other conditions based on your specific requirements
-        // For instance, check if the logger was called or not, based on your logging setup.
+    @Test
+    void testCreateTaskItem() {
+
+        // Call createTaskItem to create a sample TaskItem
+        TaskItem createdTaskItem = taskManager.createTaskItem(null, "TaskName", "TaskDescription", TaskItem.Status.TODO);
+
+        // Verify that the created TaskItem is not null
+        assertNotNull(createdTaskItem);
+
+        // Verify that the attributes of the created TaskItem match the input values
+        assertEquals("TaskName", createdTaskItem.getName());
+        assertEquals("TaskDescription", createdTaskItem.getDescription());
+        assertEquals(TaskItem.Status.TODO, createdTaskItem.getStatus());
     }
 }
