@@ -27,6 +27,12 @@ public class TaskManager{
         allTaskItems.remove(delItem);
         logger.info("Removed task item from allTaskItems: " + delItem.getName());
     }
+
+    //method to return allTaskItems
+    public static List<TaskItem> getAllTaskItems() {
+        return new ArrayList<>(allTaskItems); // Return a copy to avoid external modifications
+    }
+
     //method to view allTaskItems
     public static void viewAllTasks(){
         for(TaskItem task: allTaskItems){
