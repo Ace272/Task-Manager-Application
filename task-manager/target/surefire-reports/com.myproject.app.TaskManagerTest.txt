@@ -1,4 +1,26 @@
 -------------------------------------------------------------------------------
 Test set: com.myproject.app.TaskManagerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.myproject.app.TaskManagerTest
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.460 s <<< FAILURE! -- in com.myproject.app.TaskManagerTest
+com.myproject.app.TaskManagerTest.testAddNewToTGList -- Time elapsed: 0.453 s <<< FAILURE!
+Argument(s) are different! Wanted:
+taskGroup.addToTL(
+    com.myproject.app.TaskItem@5b84f14
+);
+-> at com.myproject.app.TaskGroup.addToTL(TaskGroup.java:70)
+Actual invocations have different arguments:
+taskGroup.addToTL(
+    com.myproject.app.TaskItem@3d7b1f1c
+);
+-> at com.myproject.app.TaskManager.addNewToTGList(TaskManager.java:54)
+taskGroup.viewTaskList(
+    
+);
+-> at com.myproject.app.TaskManager.addNewToTGList(TaskManager.java:55)
+
+	at com.myproject.app.TaskGroup.addToTL(TaskGroup.java:70)
+	at com.myproject.app.TaskManagerTest.testAddNewToTGList(TaskManagerTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
