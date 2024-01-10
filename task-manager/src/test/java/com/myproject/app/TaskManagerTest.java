@@ -15,6 +15,7 @@ public class TaskManagerTest {
     @BeforeEach
     void setUp(){
         taskManager = new TaskManager();
+        TaskManager.allTaskItems.clear();
     }
 
     @Test
@@ -31,7 +32,12 @@ public class TaskManagerTest {
         // Verify that the sample TaskItem was added to the allTaskItems list
         assertEquals(1, allTaskItems.size());
         assertEquals(taskItem, allTaskItems.get(0));
+
+        for(TaskItem task: allTaskItems){
+            System.out.println(task.getName());
+        }
     }
+
 
     @Test
     void testCreateTaskItem() {
