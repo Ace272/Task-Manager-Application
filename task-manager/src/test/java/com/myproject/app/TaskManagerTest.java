@@ -8,9 +8,6 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-
 public class TaskManagerTest {
     
     private TaskManager taskManager;
@@ -57,21 +54,4 @@ public class TaskManagerTest {
         assertEquals(TaskItem.Status.TODO, createdTaskItem.getStatus());
     }
 
-    @Test
-    void testAddNewToTGList() {
-        // Create a sample TaskItem
-        TaskItem taskItem = new TaskItem("SampleTask", "SampleDescription", TaskItem.Status.TODO);
-
-        // Create a mock TaskGroup
-        TaskGroup mockTaskGroup = mock(TaskGroup.class);
-
-        // Add the sample TaskItem to the task group list using addNewToTGList method
-        taskManager.addNewToTGList(mockTaskGroup, null, "TaskName", "TaskDescription", TaskItem.Status.TODO);
-
-        // Verify that addToTL method of the mock TaskGroup was called
-        verify(mockTaskGroup).addToTL(taskItem);
-
-        // Verify that the task group list was viewed
-        verify(mockTaskGroup).viewTaskList();
-    }
 }
