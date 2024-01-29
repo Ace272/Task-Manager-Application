@@ -152,9 +152,3 @@
 2024-01-14 17:04:17 INFO  TaskManager:23 - Added task item to allTaskItems: Location
 2024-01-14 17:04:17 INFO  TaskManager:47 - Created a new task item: TaskName
 2024-01-14 17:04:17 INFO  TaskManager:23 - Added task item to allTaskItems: SampleTask
-2024-01-15 02:09:50 INFO  TaskManager:23 - Added task item to allTaskItems: joe
-2024-01-15 02:09:50 INFO  TaskManager:23 - Added task item to allTaskItems: Row
-2024-01-15 02:09:50 INFO  TaskManager:23 - Added task item to allTaskItems: joe
-2024-01-15 02:09:50 INFO  TaskManager:23 - Added task item to allTaskItems: Location
-2024-01-15 02:09:50 INFO  TaskManager:47 - Created a new task item: TaskName
-2024-01-15 02:09:50 INFO  TaskManager:23 - Added task item to allTaskItems: SampleTask
