@@ -35,10 +35,13 @@ public class TaskManager{
 
     //method to view allTaskItems
     public static void viewAllTasks(){
+        int num = 1;
         for(TaskItem task: allTaskItems){
-            logger.info("Task: " + task.getName());
+            System.out.println("Task " + num + ":");
             System.out.println(task);
+            num++;
         }
+        logger.info("All Tasks were displayed");
     }
 
     //method to create a task Item
