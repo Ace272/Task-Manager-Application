@@ -3,6 +3,8 @@ package com.myproject.app;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import com.myproject.app.cliScreens.MainScreen;
+
 public class CommandLineInterface {
 
     private Scanner scanner;
@@ -26,5 +28,8 @@ public class CommandLineInterface {
         }
         System.out.print("\033[H\033[2J");
         System.out.flush();
+        int nexting = 0;
+        do{MainScreen.screen();}
+        while(nexting != 0 );
     }
 }
