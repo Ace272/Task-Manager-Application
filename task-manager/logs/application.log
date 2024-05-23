@@ -164,3 +164,31 @@
 2024-01-30 19:12:42 INFO  TaskManager:23 - Added task item to allTaskItems: Location
 2024-01-30 19:12:42 INFO  TaskManager:47 - Created a new task item: TaskName
 2024-01-30 19:12:42 INFO  TaskManager:23 - Added task item to allTaskItems: SampleTask
+2024-05-23 18:06:48 INFO  TaskManager:26 - Added task item to allTaskItems: joe
+2024-05-23 18:06:48 INFO  TaskManager:26 - Added task item to allTaskItems: Row
+2024-05-23 18:06:48 INFO  TaskManager:26 - Added task item to allTaskItems: joe
+2024-05-23 18:06:48 INFO  TaskManager:26 - Added task item to allTaskItems: Location
+2024-05-23 18:06:48 INFO  TaskManager:54 - Created a new task item: TaskName
+2024-05-23 18:06:48 INFO  TaskManager:26 - Added task item to allTaskItems: SampleTask
+2024-05-23 18:06:59 INFO  CommandLineInterface:15 - Task Manager CLI started
+2024-05-23 18:07:09 INFO  CommandLineInterface:78 - Viewing all task groups
+2024-05-23 18:07:09 INFO  TaskManager:80 - Retrieving all task groups
+2024-05-23 18:07:14 INFO  CommandLineInterface:78 - Viewing all task groups
+2024-05-23 18:07:14 INFO  TaskManager:80 - Retrieving all task groups
+2024-05-23 18:07:18 INFO  CommandLineInterface:62 - Creating new task group
+2024-05-23 18:09:23 INFO  TaskManager:26 - Added task item to allTaskItems: joe
+2024-05-23 18:09:23 INFO  TaskManager:26 - Added task item to allTaskItems: Row
+2024-05-23 18:09:23 INFO  TaskManager:26 - Added task item to allTaskItems: joe
+2024-05-23 18:09:23 INFO  TaskManager:26 - Added task item to allTaskItems: Location
+2024-05-23 18:09:23 INFO  TaskManager:54 - Created a new task item: TaskName
+2024-05-23 18:09:23 INFO  TaskManager:26 - Added task item to allTaskItems: SampleTask
+2024-05-23 18:15:54 INFO  CommandLineInterface:15 - Task Manager CLI started
+2024-05-23 18:16:02 INFO  CommandLineInterface:47 - Task Manager CLI stopped
+2024-05-23 19:00:09 INFO  TaskManager:26 - Added task item to allTaskItems: joe
+2024-05-23 19:00:09 INFO  TaskManager:26 - Added task item to allTaskItems: Row
+2024-05-23 19:00:09 INFO  TaskManager:26 - Added task item to allTaskItems: joe
+2024-05-23 19:00:09 INFO  TaskManager:26 - Added task item to allTaskItems: Location
+2024-05-23 19:00:09 INFO  TaskManager:54 - Created a new task item: TaskName
+2024-05-23 19:00:09 INFO  TaskManager:26 - Added task item to allTaskItems: SampleTask
+2024-05-23 19:00:17 INFO  CommandLineInterface:16 - Task Manager CLI started
+2024-05-23 19:00:20 INFO  CommandLineInterface:48 - Task Manager CLI stopped

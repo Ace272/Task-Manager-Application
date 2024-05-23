@@ -1,0 +1,15 @@
+Yes, if you're using Maven as your build tool, you can compile and run your application using Maven commands. Here's how you can do it:
+
+1. Compile: Maven will compile your source code and generate the necessary .class files.
+bash
+
+        mvn compile
+2. Run: You can use the exec:java goal provided by the Maven exec plugin to run your application.
+bash
+
+        mvn exec:java -Dexec.mainClass="com.myproject.app.CommandLineInterface"
+This command tells Maven to execute the main method in the CommandLineInterface class within the com.myproject.app package.
+
+Make sure your Maven pom.xml file is correctly configured with the necessary dependencies and plugins, including the exec-maven-plugin for executing Java code.
+
+Once you run these commands, Maven will handle the compilation and execution of your Java application, including managing dependencies and classpaths as specified in your pom.xml file.

@@ -1,8 +1,0 @@
-com/myproject/app/TaskItem$Status.class
-com/myproject/app/TaskItem.class
-com/myproject/app/TaskGroup.class
-com/myproject/db/DatabaseConnection.class
-com/myproject/app/CommandLineInterface.class
-com/myproject/app/TaskManager.class
-com/myproject/Main.class
-com/myproject/app/App.class
