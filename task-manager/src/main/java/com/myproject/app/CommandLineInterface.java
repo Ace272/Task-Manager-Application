@@ -1,5 +1,6 @@
 package com.myproject.app;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class CommandLineInterface {
@@ -159,18 +160,20 @@ public class CommandLineInterface {
     }
 
     private static void saveTaskGroups() {
-        System.out.print("Enter filename to save task groups: ");
-        String filename = scanner.nextLine();
-        taskManager.objectToXml(taskManager.getAllTaskGroups(), filename);
+        System.out.print("Enter filename prefix to save task groups: ");
+        String filenamePrefix = scanner.nextLine();
+        taskManager.objectToXml(taskManager.getAllTaskGroups(), filenamePrefix);
         System.out.println("Task groups saved successfully.");
     }
 
     private static void loadTaskGroups() {
         System.out.print("Enter filename to load task groups: ");
         String filename = scanner.nextLine();
-        TaskGroup loadedGroup = taskManager.xmlToObject(filename);
-        if (loadedGroup != null) {
-            taskManager.addTaskGroup(loadedGroup);
+        List<TaskGroup> loadedGroups = taskManager.xmlToObject(filename);
+        if (loadedGroups != null) {
+            for (TaskGroup tg : loadedGroups) {
+                taskManager.addTaskGroup(tg);
+            }
             System.out.println("Task groups loaded successfully.");
         } else {
             System.out.println("Failed to load task groups.");
