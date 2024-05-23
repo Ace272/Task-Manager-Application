@@ -3,11 +3,16 @@ package com.myproject.app;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CommandLineInterface {
+    private static final Logger logger = LogManager.getLogger(CommandLineInterface.class);
     private static TaskManager taskManager = new TaskManager();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main() {
+        logger.info("Task Manager CLI started");
         boolean running = true;
 
         while (running) {
@@ -35,9 +40,11 @@ public class CommandLineInterface {
                     running = false;
                     break;
                 default:
+                    logger.warn("Invalid choice entered: {}", choice);
                     System.out.println("Invalid choice. Please try again.");
             }
         }
+        logger.info("Task Manager CLI stopped");
     }
 
     private static void printMainMenu() {
@@ -52,6 +59,7 @@ public class CommandLineInterface {
     }
 
     private static void createTaskGroup() {
+        logger.info("Creating new task group");
         System.out.print("Enter task group name: ");
         String name = scanner.nextLine();
         System.out.print("Enter task group description: ");
@@ -62,17 +70,21 @@ public class CommandLineInterface {
         taskGroup.setDescription(description);
 
         taskManager.addTaskGroup(taskGroup);
+        logger.info("Task group '{}' created successfully", name);
         System.out.println("Task group created successfully.");
     }
 
     private static void viewAllTaskGroups() {
-        for (TaskGroup tg : taskManager.getAllTaskGroups()) {
+        logger.info("Viewing all task groups");
+        List<TaskGroup> allTaskGroups = taskManager.getAllTaskGroups();
+        for (TaskGroup tg : allTaskGroups) {
             System.out.println("Task Group: " + tg.getName());
             tg.viewTaskList();
         }
     }
 
     private static void manageTaskGroup() {
+        logger.info("Managing task group");
         System.out.print("Enter task group name to manage: ");
         String name = scanner.nextLine();
         TaskGroup taskGroup = null;
@@ -85,6 +97,7 @@ public class CommandLineInterface {
         }
 
         if (taskGroup == null) {
+            logger.warn("Task group '{}' not found", name);
             System.out.println("Task group not found.");
             return;
         }
@@ -109,6 +122,7 @@ public class CommandLineInterface {
                     managing = false;
                     break;
                 default:
+                    logger.warn("Invalid choice entered in task group management: {}", choice);
                     System.out.println("Invalid choice. Please try again.");
             }
         }
@@ -124,6 +138,7 @@ public class CommandLineInterface {
     }
 
     private static void addTaskToGroup(TaskGroup taskGroup) {
+        logger.info("Adding task to group");
         System.out.print("Enter task name: ");
         String name = scanner.nextLine();
         System.out.print("Enter task description: ");
@@ -132,14 +147,17 @@ public class CommandLineInterface {
 
         TaskItem taskItem = new TaskItem(name, description, status);
         taskGroup.addToTL(taskItem);
+        logger.info("Task '{}' added to group '{}'", name, taskGroup.getName());
         System.out.println("Task added successfully.");
     }
 
     private static void viewTasksInGroup(TaskGroup taskGroup) {
+        logger.info("Viewing tasks in group");
         taskGroup.viewTaskList();
     }
 
     private static void removeTaskFromGroup(TaskGroup taskGroup) {
+        logger.info("Removing task from group");
         System.out.print("Enter task name to remove: ");
         String name = scanner.nextLine();
 
@@ -153,13 +171,16 @@ public class CommandLineInterface {
 
         if (taskToRemove != null) {
             taskGroup.removeFromTL(taskToRemove);
+            logger.info("Task '{}' removed from group '{}'", name, taskGroup.getName());
             System.out.println("Task removed successfully.");
         } else {
+            logger.warn("Task '{}' not found in group '{}'", name, taskGroup.getName());
             System.out.println("Task not found.");
         }
     }
 
     private static void saveTaskGroups() {
+        logger.info("Saving task groups to file");
         System.out.print("Enter filename prefix to save task groups: ");
         String filenamePrefix = scanner.nextLine();
         taskManager.objectToXml(taskManager.getAllTaskGroups(), filenamePrefix);
@@ -167,6 +188,7 @@ public class CommandLineInterface {
     }
 
     private static void loadTaskGroups() {
+        logger.info("Loading task groups from file");
         System.out.print("Enter filename to load task groups: ");
         String filename = scanner.nextLine();
         List<TaskGroup> loadedGroups = taskManager.xmlToObject(filename);
@@ -174,8 +196,10 @@ public class CommandLineInterface {
             for (TaskGroup tg : loadedGroups) {
                 taskManager.addTaskGroup(tg);
             }
+            logger.info("Task groups loaded successfully from file: {}", filename);
             System.out.println("Task groups loaded successfully.");
         } else {
+            logger.warn("Failed to load task groups from file: {}", filename);
             System.out.println("Failed to load task groups.");
         }
     }
