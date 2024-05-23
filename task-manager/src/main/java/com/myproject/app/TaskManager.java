@@ -11,10 +11,11 @@ import javax.xml.bind.Marshaller;
 
 public class TaskManager{
     public static List<TaskItem> allTaskItems = new ArrayList<>();
+    private List<TaskGroup> allTaskGroups;
     private static final Logger logger = LogManager.getLogger(TaskManager.class);
 
-    TaskManager(){
-        //placeholder
+    public TaskManager(){
+        allTaskGroups = new ArrayList<>();
     }
 
     // method adding to allTaskItems
@@ -65,8 +66,19 @@ public class TaskManager{
         tg.viewTaskList();
         logger.info("Added an existing task item to task group list: " + ti.getName());
     }
-    //File time
 
+    //TaskGroup Managing Functions
+    public void addTaskGroup(TaskGroup taskGroup) {
+        allTaskGroups.add(taskGroup);
+        logger.info("Added task group: {}", taskGroup.getName());
+    }
+
+    public List<TaskGroup> getAllTaskGroups() {
+        logger.info("Retrieving all task groups");
+        return allTaskGroups;
+    }
+
+     //File time
     //Marshalling
     public void objectToXml(TaskGroup tg, String name, String desc) {
     try {
