@@ -6,7 +6,7 @@ public class CommandLineInterface {
     private static TaskManager taskManager = new TaskManager();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main() {
         boolean running = true;
 
         while (running) {

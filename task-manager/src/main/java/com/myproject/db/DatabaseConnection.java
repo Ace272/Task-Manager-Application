@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/*
+ * Indeed there is a DataBase Connection file but it has not been used in this project as all storage has been done on the computer files
+ */
 public class DatabaseConnection {
     private static final String DB_URL = "jdbc:derby:./myTasksdb;create=false";
     private static final String DB_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
